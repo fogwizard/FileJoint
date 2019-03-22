@@ -1,0 +1,93 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ASCIILINESZ	src/iniparser.c	21;"	d	file:
+BINDIR	Makefile	/^BINDIR  ?= $(PREFIX)\/bin$/;"	m
+BUF_SIZE	src/FileJoint.c	19;"	d	file:
+CONFIG_H_	src/config.h	11;"	d
+DEFAULT_APP_FILE	src/config.h	20;"	d
+DEFAULT_APP_SIZE	src/config.h	22;"	d
+DEFAULT_BOOT_FILE	src/config.h	19;"	d
+DEFAULT_BOOT_SIZE	src/config.h	21;"	d
+DEFAULT_DEST_FILE	src/config.h	18;"	d
+DEFAULT_INI_FILE	src/config.h	17;"	d
+DEFAULT_LOG_FILE_NAME	src/config.h	25;"	d
+DEFAULT_LOG_FILE_NAME	src/log.c	31;"	d	file:
+DEFAULT_LOG_ON	src/config.h	24;"	d
+DEFAULT_MAX_FILE	src/config.h	16;"	d
+DESTDIR	Makefile	/^DESTDIR ?=$/;"	m
+DICTMINSZ	src/dictionary.c	33;"	d	file:
+DICT_INVALID_KEY	src/dictionary.c	36;"	d	file:
+INI_H_	src/ini.h	11;"	d
+INI_INVALID_KEY	src/iniparser.c	22;"	d	file:
+LINE_COMMENT	src/iniparser.c	/^    LINE_COMMENT,$/;"	e	enum:_line_status_	file:
+LINE_EMPTY	src/iniparser.c	/^    LINE_EMPTY,$/;"	e	enum:_line_status_	file:
+LINE_ERROR	src/iniparser.c	/^    LINE_ERROR,$/;"	e	enum:_line_status_	file:
+LINE_SECTION	src/iniparser.c	/^    LINE_SECTION,$/;"	e	enum:_line_status_	file:
+LINE_UNPROCESSED	src/iniparser.c	/^    LINE_UNPROCESSED,$/;"	e	enum:_line_status_	file:
+LINE_VALUE	src/iniparser.c	/^    LINE_VALUE$/;"	e	enum:_line_status_	file:
+LOG_H_	src/log.h	11;"	d
+MAXVALSZ	src/dictionary.c	30;"	d	file:
+MAX_FILE_NAME_LEN	src/ini.h	24;"	d
+NVALS	src/dictionary.c	366;"	d	file:
+PREFIX	Makefile	/^PREFIX  ?= \/usr\/local$/;"	m
+_DICTIONARY_H_	src/dictionary.h	24;"	d
+_INIPARSER_H_	src/iniparser.h	18;"	d
+_dictionary_	src/dictionary.h	/^typedef struct _dictionary_ {$/;"	s
+_line_status_	src/iniparser.c	/^typedef enum _line_status_ {$/;"	g	file:
+blank	src/ini.h	/^    int blank;$/;"	m	struct:__anon2
+create_example_ini_file	src/ini.c	/^create_example_ini_file(void)$/;"	f	file:
+dictionary	src/dictionary.h	/^} dictionary ;$/;"	t	typeref:struct:_dictionary_
+dictionary_del	src/dictionary.c	/^void dictionary_del(dictionary * d)$/;"	f
+dictionary_dump	src/dictionary.c	/^void dictionary_dump(dictionary * d, FILE * out)$/;"	f
+dictionary_get	src/dictionary.c	/^char * dictionary_get(dictionary * d, char * key, char * def)$/;"	f
+dictionary_hash	src/dictionary.c	/^unsigned dictionary_hash(char * key)$/;"	f
+dictionary_new	src/dictionary.c	/^dictionary * dictionary_new(int size)$/;"	f
+dictionary_set	src/dictionary.c	/^int dictionary_set(dictionary * d, char * key, char * val)$/;"	f
+dictionary_unset	src/dictionary.c	/^void dictionary_unset(dictionary * d, char * key)$/;"	f
+file	src/ini.h	/^    file_t file[DEFAULT_MAX_FILE];$/;"	m	struct:__anon2
+file_t	src/ini.h	/^} file_t;$/;"	t	typeref:struct:__anon1
+filejoint_ini_t	src/ini.h	/^} filejoint_ini_t;$/;"	t	typeref:struct:__anon2
+filemaxsize	src/ini.h	/^    int filemaxsize;$/;"	m	struct:__anon1
+filename	src/ini.h	/^    char filename[MAX_FILE_NAME_LEN];$/;"	m	struct:__anon1
+files	src/ini.h	/^    int files;$/;"	m	struct:__anon2
+hash	src/dictionary.h	/^	unsigned	 *	hash ;	\/** List of hash values for keys *\/$/;"	m	struct:_dictionary_
+ini_get_info	src/ini.c	/^ini_get_info(filejoint_ini_t *pinfo)$/;"	f
+iniparser_dump	src/iniparser.c	/^void iniparser_dump(dictionary * d, FILE * f)$/;"	f
+iniparser_dump_ini	src/iniparser.c	/^void iniparser_dump_ini(dictionary * d, FILE * f)$/;"	f
+iniparser_find_entry	src/iniparser.c	/^int iniparser_find_entry($/;"	f
+iniparser_freedict	src/iniparser.c	/^void iniparser_freedict(dictionary * d)$/;"	f
+iniparser_getboolean	src/iniparser.c	/^int iniparser_getboolean(dictionary * d, char * key, int notfound)$/;"	f
+iniparser_getdouble	src/iniparser.c	/^double iniparser_getdouble(dictionary * d, char * key, double notfound)$/;"	f
+iniparser_getint	src/iniparser.c	/^int iniparser_getint(dictionary * d, char * key, int notfound)$/;"	f
+iniparser_getnsec	src/iniparser.c	/^int iniparser_getnsec(dictionary * d)$/;"	f
+iniparser_getsecname	src/iniparser.c	/^char * iniparser_getsecname(dictionary * d, int n)$/;"	f
+iniparser_getstring	src/iniparser.c	/^char * iniparser_getstring(dictionary * d, char * key, char * def)$/;"	f
+iniparser_line	src/iniparser.c	/^static line_status iniparser_line($/;"	f	file:
+iniparser_load	src/iniparser.c	/^dictionary * iniparser_load(char * ininame)$/;"	f
+iniparser_set	src/iniparser.c	/^int iniparser_set(dictionary * ini, char * entry, char * val)$/;"	f
+iniparser_unset	src/iniparser.c	/^void iniparser_unset(dictionary * ini, char * entry)$/;"	f
+islog	src/ini.h	/^    int islog;$/;"	m	struct:__anon2
+key	src/dictionary.h	/^	char 		**  key ;	\/** List of string keys *\/$/;"	m	struct:_dictionary_
+line_status	src/iniparser.c	/^} line_status ;$/;"	t	typeref:enum:_line_status_	file:
+log_buf	src/log.c	/^log_buf(const char *pformat,$/;"	f
+log_exit	src/log.c	/^log_exit(void)$/;"	f
+log_init	src/log.c	/^log_init(void)$/;"	f
+log_on	src/log.c	/^log_on(char logflag)$/;"	f
+log_print	src/log.c	/^log_print(const char *fmt, ...)$/;"	f
+logfile	src/ini.h	/^    char logfile[MAX_FILE_NAME_LEN];$/;"	m	struct:__anon2
+main	src/FileJoint.c	/^int main(void)$/;"	f
+main	src/dictionary.c	/^int main(int argc, char *argv[])$/;"	f
+mem_double	src/dictionary.c	/^static void * mem_double(void * ptr, int size)$/;"	f	file:
+n	src/dictionary.h	/^	int				n ;		\/** Number of entries in dictionary *\/$/;"	m	struct:_dictionary_
+outfile	src/ini.h	/^    char outfile[MAX_FILE_NAME_LEN];$/;"	m	struct:__anon2
+size	src/dictionary.h	/^	int				size ;	\/** Storage size *\/$/;"	m	struct:_dictionary_
+strlwc	src/iniparser.c	/^static char * strlwc(char * s)$/;"	f	file:
+strstrip	src/iniparser.c	/^static char * strstrip(char * s)$/;"	f	file:
+the_log_flag	src/log.c	/^static char the_log_flag = 1;   \/**< 日志记录标志 *\/$/;"	v	file:
+the_log_fp	src/log.c	/^static FILE *the_log_fp = NULL;$/;"	v	file:
+val	src/dictionary.h	/^	char 		**	val ;	\/** List of string values *\/$/;"	m	struct:_dictionary_
+xstrdup	src/dictionary.c	/^static char * xstrdup(char * s)$/;"	f	file:

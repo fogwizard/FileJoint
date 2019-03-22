@@ -18,7 +18,7 @@
 
 #define BUF_SIZE            (1024)
 
-int main(void)
+int main(int argc, char *argv[])
 {
     filejoint_ini_t fji;
     char buf[BUF_SIZE];
@@ -35,7 +35,12 @@ int main(void)
     puts("!!!FileJoint!!!");
 
     /* 0. 初始化参数 */
-    if (0 != ini_get_info(&fji)) {
+    if(2 == argc) {
+        i = ini_get_info(&fji, argv[1]);
+    } else {
+        i = ini_get_info(&fji, DEFAULT_INI_FILE);
+    }
+    if (0 != i) {
         printf("ini get info err!\n");
         goto mainend;
     }
@@ -87,18 +92,18 @@ int main(void)
         }
         (void)fclose(fcur);
 
-	if(total_size >(1024*1024)) {
-		unit_name =  "MB";
-		unit_size =  total_size/1024.0/1024.0;
-	}else if(total_size >1024) {
-		unit_name =  "KB";
-		unit_size =  total_size/1024.0;
-	} else {
-		unit_name =  "B";
-		unit_size =  total_size/1.0;
-	}
-    	printf("[%d]file_size =%08d 0x%08x out=%f%s\n   file_name=%s\n", i+1, write_size,
-			write_size, unit_size, unit_name, fji.file[i].filename);
+        if(total_size >(1024*1024)) {
+            unit_name =  "MB";
+            unit_size =  total_size/1024.0/1024.0;
+        } else if(total_size >1024) {
+            unit_name =  "KB";
+            unit_size =  total_size/1024.0;
+        } else {
+            unit_name =  "B";
+            unit_size =  total_size/1.0;
+        }
+        printf("[%d]file_size =%08d 0x%08x out=%f%s\n   file_name=%s\n", i+1, write_size,
+               write_size, unit_size, unit_name, fji.file[i].filename);
         total_size += write_size;
 
         fcur = NULL;
@@ -107,19 +112,19 @@ int main(void)
         write_size = fji.file[i].filemaxsize - file_size;
 
         total_size += write_size;
-	if(total_size >(1024*1024)) {
-		unit_name =  "MB";
-		unit_size =  total_size/1024.0/1024.0;
-	}else if(total_size >1024) {
-		unit_name =  "KB";
-		unit_size =  total_size/1024.0;
-	} else {
-		unit_name =  "B";
-		unit_size =  total_size/1.0;
-	}
-    	printf("[%d]fill_size =%08d 0x%08x\n", i+1, write_size, write_size);
-    	printf("[%d]total_size=%08d 0x%08x sum=%f%s\n", i+1, total_size, total_size,
-			unit_size, unit_name);
+        if(total_size >(1024*1024)) {
+            unit_name =  "MB";
+            unit_size =  total_size/1024.0/1024.0;
+        } else if(total_size >1024) {
+            unit_name =  "KB";
+            unit_size =  total_size/1024.0;
+        } else {
+            unit_name =  "B";
+            unit_size =  total_size/1.0;
+        }
+        printf("[%d]fill_size =%08d 0x%08x\n", i+1, write_size, write_size);
+        printf("[%d]total_size=%08d 0x%08x sum=%f%s\n", i+1, total_size, total_size,
+               unit_size, unit_name);
 
         while (write_size > 0) {
             len = (write_size > BUF_SIZE) ? BUF_SIZE : write_size;

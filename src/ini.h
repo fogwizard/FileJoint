@@ -26,14 +26,12 @@ extern "C" {
 /*-----------------------------------------------------------------------------
  Section: Type Definitions
  ----------------------------------------------------------------------------*/
-typedef struct
-{
+typedef struct {
     char filename[MAX_FILE_NAME_LEN];
     int filemaxsize;
 } file_t;
 
-typedef struct
-{
+typedef struct {
     int files;
     int blank;
     int islog;
@@ -51,7 +49,7 @@ typedef struct
  Section: Function Prototypes
  ----------------------------------------------------------------------------*/
 extern int
-ini_get_info(filejoint_ini_t *pinfo);
+ini_get_info(filejoint_ini_t *pinfo, const char *path);
 
 #ifdef __cplusplus      /* Maintain C++ compatibility */
 }

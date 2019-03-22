@@ -106,7 +106,7 @@ create_example_ini_file(void)
  ******************************************************************************
  */
 int
-ini_get_info(filejoint_ini_t *pinfo)
+ini_get_info(filejoint_ini_t *pinfo, const char *path)
 {
     dictionary  *   ini ;
     char *pstr = NULL;
@@ -115,7 +115,7 @@ ini_get_info(filejoint_ini_t *pinfo)
 
     memset(pinfo, 0x00, sizeof(*pinfo));
 
-    ini = iniparser_load(DEFAULT_INI_FILE);
+    ini = iniparser_load(path);
     if (NULL == ini) {
         create_example_ini_file();
         ini = iniparser_load(DEFAULT_INI_FILE);
